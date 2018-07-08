@@ -11,23 +11,26 @@ package interview_practice;
  */
 public class Palindrome {
     public static void main(String args[]) throws Exception {
-        int a=13331;
+        int a=13321;
         String arr="";
         arr+=Integer.toString(a);
-            checkPalindrome(arr);
+        if(check_Palindrome(arr))
+            System.out.println("The given input is a palindrome!");
+        else
+            System.out.println("The given input is not a palindrome!");
+        
         }   
-    static void checkPalindrome(String arr){
+    public static boolean check_Palindrome(String arr){
         String reverse_arr="";
-        for(int i=0;i<arr.length();i++)
+        for(int i=arr.length()-1;i>=0;i--)
         {
             reverse_arr+=arr.charAt(i);
         }
-        System.out.println(reverse_arr);
-        System.out.println(arr);
         if(arr.equalsIgnoreCase(reverse_arr))
-            System.out.println("Yahoooo");
+            return true;
         else
-            System.out.println("Naaaahoooo");
+            return false;
 }
+    boolean reverse_arr;
 }
 
