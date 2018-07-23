@@ -34,13 +34,13 @@ public class Main {
     a1.add(new Allergy("rashes",Severity.HIGH));
     a1.add(new Allergy("burning sensation",Severity.MEDIUM));
     Main m=new Main("Ramesh",a1,Reporter.NURSE);
-    m.display(m,a1);
+    m.display();
     }
     
-    public void display(Main m, List<Allergy>a1){
-        String name=m.getName();
-        for(Allergy a:a1){
-            System.out.println(name+" has "+a.getAllergyname()+" with "+a.getSeverity()+" severity which was reported by "+m.getReporter());
+    public void display(){
+        String name=getName();
+        for(Allergy a:getAllergy()){
+            System.out.println(name+" has "+a.getAllergyname()+" with "+a.getSeverity()+" severity which was reported by "+getReporter());
         }
     
     }
